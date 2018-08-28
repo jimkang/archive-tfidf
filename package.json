@@ -1,0 +1,27 @@
+{
+  "name": "archive-tfidf",
+  "version": "1.0.2",
+  "description": "Runs TF-IDF (using term-tracker on a static-web-archive whenever there is a new archive page. Optionally posts the results somewhere.",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:jimkang/archive-tfidf.git"
+  },
+  "keywords": [
+    "request",
+    "http"
+  ],
+  "author": "Jim Kang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jimkang/archive-tfidf/issues"
+  },
+  "homepage": "https://github.com/jimkang/archive-tfidf",
+  "devDependencies": {},
+  "dependencies": {
+    "term-tracker": "^2.0.0"
+  }
+}
