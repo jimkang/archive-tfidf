@@ -56,11 +56,12 @@ function calculate(error) {
 
   fs.writeFileSync(lastPageAddedPath, pageToAdd, { encoding: 'utf8' });
   
-  var scores = docs.map(getTFIDF);
-  console.log(JSON.stringify(scores, null, 2));
+  docs.map(addTFIDF);
+  var reports = docs.map(getDocReport);
+  console.log(JSON.stringify(reports, null, 2));
 }
 
-function getTFIDF(doc) {
+function addTFIDF(doc) {
   var docMeta = tracker.getDocMeta({ id: doc.id });
   var analyses = [];
   if (docMeta.termCount > 0 && docs.length > 0) {
@@ -78,9 +79,22 @@ function getTFIDF(doc) {
       }
     }
   }
+  doc.analyses = analyses;
+}
+
+function getDocReport(doc) {
+  var sortedAnalyses = doc.analyses.sort(aGoesBeforeB).slice(0, 10);
   return {
     id: doc.id,
-    analyses
+    topTerms: sortedAnalyses
   };
+}
+
+function aGoesBeforeB(a, b) {
+  if (a.tfidf > b.tfidf) {
+    return -1;
+  } else {
+    return 1;
+  }
 }
 
