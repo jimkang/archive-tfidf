@@ -23,6 +23,9 @@
   "devDependencies": {},
   "dependencies": {
     "@jimkang/post-it": "^1.0.1",
+    "idmaker": "^0.1.1",
+    "lodash.pluck": "^3.1.2",
+    "standard-bail": "^2.0.1",
     "term-tracker": "^2.0.0"
   }
 }
