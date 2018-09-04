@@ -124,8 +124,8 @@ function formatReportsIntoText({
   if (useHTML) {
     archiveLink = `<a href="${baseURL}/${pageToPostAbout}.html">${title} page ${pageToPostAbout}</a>`;
   }
-  var text = `Salient terms at ${archiveLink}${br}`;
-  text += reports.map(getSummary).join(br);
+  var text = `Salient terms at ${archiveLink}${br}${br}`;
+  text += reports.map(getSummary).join(br + br);
   return text;
 
   function getSummary(report) {
