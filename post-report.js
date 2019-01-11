@@ -63,7 +63,7 @@ var reports = JSON.parse(
 );
 
 //var mastodonText = formatReportsIntoText({ reports, termsPerDoc: 3 });
-var twitterText = formatReportsIntoText({ reports });
+//var twitterText = formatReportsIntoText({ reports });
 var html = formatReportsIntoText({
   reports,
   useHTML: true,
@@ -90,12 +90,12 @@ postIt(
         config: config.mastodon,
         text: mastodonText.slice(0, 500)
       },
-      */
       {
         type: 'twitter',
         config: config.twitter,
         text: twitterText.slice(0, 280)
       }
+     */
     ]
   },
   sb(updatePostingRecord, logError)
